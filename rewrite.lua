@@ -35,7 +35,14 @@ local Datatypes = {
         else
             return Enum.PartType[v].Value
         end
-    end}
+    end},
+    BrickColor = {"int", function(v)
+        if type(v) == "number" then
+            return v 
+        else
+            return v.Number
+        end
+    end},
 }
 
 local function BuildInstance(Instance)
