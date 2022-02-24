@@ -99,3 +99,5 @@ function StudioService.new(ClassName, Parent)
     
     return Instance.Properties
 end
+
+return StudioService
