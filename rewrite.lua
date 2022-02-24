@@ -1,3 +1,4 @@
+
 local Build = {}
 
 local xml
@@ -41,13 +42,14 @@ local function BuildInstance(Instance)
     indent = indent - 1
     
     xml = xml .. string.rep('\t', indent) .. '</Properties>\n'
-    indent = indent - 1
     
     if Instance.Children then
         for i,v in next, Instance.Children do
             BuildInstance(v)
         end
     end
+    
+    indent = indent - 1
     
     xml = xml .. string.rep('\t', indent) .. '</Item>\n'
 end
