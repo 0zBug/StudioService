@@ -81,15 +81,21 @@ function StudioService.new(ClassName, Parent)
     
     local Parent = Parent or "Workspace"
     if type(Parent) == "table" then
-        table.insert(Instance, Parent.Children)
+        table.insert(Parent.Children, Instance)
+    elseif type(Parent) == "userdata" then
+        Parent = Parent.Name
+        if not Build[Parent] then
+            Build[Parent] = {}
+        end
+        
+        table.insert(Build[Parent], Instance)
     else
         if not Build[Parent] then
             Build[Parent] = {}
         end
-        table.insert(Instance, Build[Parent])
+        
+        table.insert(Build[Parent], Instance)
     end
     
     return Instance.Properties
 end
-
-return StudioService
