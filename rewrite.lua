@@ -7,19 +7,19 @@ local Datatypes = {
         return "<![CDATA[" .. v .. "]]>"
     end},
     CFrame = {"CoordinateFrame", function(v)
-        return '<X>' .. tostring(v.X) ..'</X><Y>' .. tostring(v.Y) .. '</Y><Z>' .. tostring(v.Z) .. '</Z>'
+        return '<X>' .. tostring(v.X) .. '</X><Y>' .. tostring(v.Y) .. '</Y><Z>' .. tostring(v.Z) .. '</Z>'
     end},
     Size = {"Vector3", function(v)
-        return '<X>' .. tostring(v.X) ..'</X><Y>' .. tostring(v.Y) .. '</Y><Z>' .. tostring(v.Z) .. '</Z>'
+        return '<X>' .. tostring(v.X) .. '</X><Y>' .. tostring(v.Y) .. '</Y><Z>' .. tostring(v.Z) .. '</Z>'
     end},
     Orientation = {"Vector3", function(v)
-        return '<X>' .. tostring(v.X) ..'</X><Y>' .. tostring(v.Y) .. '</Y><Z>' .. tostring(v.Z) .. '</Z>'
+        return '<X>' .. tostring(v.X) .. '</X><Y>' .. tostring(v.Y) .. '</Y><Z>' .. tostring(v.Z) .. '</Z>'
     end},
     Position = {"Vector3", function(v)
-        return '<X>' .. tostring(v.X) ..'</X><Y>' .. tostring(v.Y) .. '</Y><Z>' .. tostring(v.Z) .. '</Z>'
+        return '<X>' .. tostring(v.X) .. '</X><Y>' .. tostring(v.Y) .. '</Y><Z>' .. tostring(v.Z) .. '</Z>'
     end},
     Color = {"Color3", function(v)
-        return '<R>' .. tostring(v.R) ..'</R><G>' .. tostring(v.G) .. '</G><B>' .. tostring(v.B) .. '</B>'
+        return '<R>' .. tostring(v.R) .. '</R><G>' .. tostring(v.G) .. '</G><B>' .. tostring(v.B) .. '</B>'
     end}
 }
 
