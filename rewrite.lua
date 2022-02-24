@@ -8,19 +8,33 @@ local Datatypes = {
         return "<![CDATA[" .. v .. "]]>"
     end},
     CFrame = {"CoordinateFrame", function(v)
-        return '<X>' .. tostring(v.X) .. '</X><Y>' .. tostring(v.Y) .. '</Y><Z>' .. tostring(v.Z) .. '</Z>'
+        return string.format("<X>%s</X><Y>%s</Y><Z>%s</Z><R00>%s</R00><R01>%s</R01><R02>%s</R02><R10>%s</R10><R11>%s</R11><R12>%s</R12><R20>%s</R20><R21>%s</R21><R22>%s</R22>", v:GetComponents())
     end},
     Size = {"Vector3", function(v)
-        return '<X>' .. tostring(v.X) .. '</X><Y>' .. tostring(v.Y) .. '</Y><Z>' .. tostring(v.Z) .. '</Z>'
+        return string.format("<X>%s</X><Y>%s</Y><Z>%s</Z>", table.unpack(string.split(tostring(v), ", ")))
     end},
     Orientation = {"Vector3", function(v)
-        return '<X>' .. tostring(v.X) .. '</X><Y>' .. tostring(v.Y) .. '</Y><Z>' .. tostring(v.Z) .. '</Z>'
+        return string.format("<X>%s</X><Y>%s</Y><Z>%s</Z>", table.unpack(string.split(tostring(v), ", ")))
     end},
     Position = {"Vector3", function(v)
-        return '<X>' .. tostring(v.X) .. '</X><Y>' .. tostring(v.Y) .. '</Y><Z>' .. tostring(v.Z) .. '</Z>'
+        return string.format("<X>%s</X><Y>%s</Y><Z>%s</Z>", table.unpack(string.split(tostring(v), ", ")))
     end},
     Color = {"Color3", function(v)
         return '<R>' .. tostring(v.R) .. '</R><G>' .. tostring(v.G) .. '</G><B>' .. tostring(v.B) .. '</B>'
+    end},
+    Material = {"token", function(v)
+        if v.Value then
+            return v.Value
+        else
+            return Enum.Material[v].Value
+        end
+    end},
+    Shape = {"token", function(v)
+        if v.Value then
+            return v.Value
+        else
+            return Enum.PartType[v].Value
+        end
     end}
 }
 
