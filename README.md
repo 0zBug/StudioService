@@ -1,6 +1,16 @@
 # StudioService
-A simple module to write rbxlx files like instances
-
+**A simple module to write rbxlx files like instances.**
+# Documentation
+### new
+**Instance.new but for StudioService.**
+```html
+<Object> StudioService.new(<string> ClassName, <Instance> Parent)
+```
+### Build
+**writes the rbxlx file to workspace.**
+```html
+<void> StudioService:Build(<string> FileName)
+```
 # Example
 ```lua
 local Part = StudioService.new("Part", Workspace)
@@ -20,7 +30,6 @@ LocalScript.Source = "print('Hello, World!');"
 
 StudioService:Build("Place")
 ```
-
 # Output
   Place.rbxlx
 ```xml
