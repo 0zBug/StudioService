@@ -46,7 +46,7 @@ local Datatypes = {
 }
 
 local function BuildInstance(Instance)
-    xml = xml .. string.rep('\t', indent) .. '<Item class="' .. Instance.ClassName .. '" referent="RBX620AF4060A8D4746BB58908C5E089749">\n'
+    xml = xml .. string.rep('\t', indent) .. '<Item class="' .. Instance.ClassName .. '">\n'
     indent = indent + 1
     xml = xml .. string.rep('\t', indent) .. '<Properties>\n'
 
@@ -82,7 +82,7 @@ function StudioService:Build(Name)
     
     indent = indent + 1
     for Parent, Children in next, Build do
-        xml = xml .. string.rep('\t', indent) .. '<Item class="' .. Parent .. '" referent="RBX6BA637DD8B9C44D385DF70A48988C0D5">\n'
+        xml = xml .. string.rep('\t', indent) .. '<Item class="' .. Parent .. '">\n'
        
         indent = indent + 1
         for i,v in next, Children do
